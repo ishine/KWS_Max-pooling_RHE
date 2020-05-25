@@ -12,22 +12,26 @@ Please cite the work below if you want to use the code or want to do research re
 ```
 
 ## Running environment
-### Python 2.7.15
-### pytorch 0.4.1
-### CUDA 8.0 or higher
-### Kaldi
+* Python 2.7.15
+* pytorch 1.4.0
+* CUDA 10.0 or higher
+* Kaldi
+
 You should know basic knowledge of Kaldi before looking at the run script. I use Kaldi to extract Fbank features and do a global CMVN using the statictics from all training set. You should add cmd.sh, path.sh, steps and utils to your working dir before you run the script.
 
-### You may first follow run_data_prepare.sh to prepare the data and extract the features. Then, please follow the run_train_proposed_public_ticmini2.sh script to learn how to run the code.
+You may first follow run_data_prepare.sh to prepare the data and extract the features. Then, please follow the run_train_proposed_public_ticmini2.sh script to learn how to run the code.
 
 ## Results on public dataset: https://www.openslr.org/87 
 This dataset is different with the dataset used in above paper, the positive data is identical with the positive data in the paper, but the negative data is newlly recorded and totally different with the negative data in the paper.
 
-Using default configuration in the paper:
-![image](https://github.com/jingyonghou/KWS_Max-pooling_RHE/raw/master/det_curves/gru_rhe.png)
+Using default configuration in the paper and without any data angumentation (GRU):
 
+<img src="./det_curves/gru_rhe.png" width = "300" alt="DET Curves" align=center />
 
-##TODO: 
+FRRs with FAR fixed at once per hour:
+* Hi Xiaowen: 0.75%
+* Nihao Wenwen: 0.70%  
+## TODO: 
 * Data Augmentation experiment
 * Further tuning of hyperparameters on the public dataset
 
